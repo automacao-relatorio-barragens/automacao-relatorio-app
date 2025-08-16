@@ -25,6 +25,18 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Available scripts
+
+The project is configured with scripts to streamline development:
+
+- `npm run lint` – check code with ESLint.
+- `npm run format` – format files using Prettier.
+- `npm test` – run the test suite with Node's built-in test runner.
+- `npm run test:e2e` – execute end-to-end tests (placeholder).
+- `npm run pdf:sample` – generate a sample PDF file.
+
+Committing changes triggers Husky and lint-staged to automatically lint, format, and test your work.
+
 ## Get a fresh project
 
 When you're ready, run:
@@ -48,3 +60,17 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Development scripts
+
+Run common project tasks:
+
+```bash
+pnpm test        # run unit tests
+pnpm test:e2e    # run end-to-end tests
+pnpm pdf:sample  # generate a sample report PDF
+```
+
+## Reporting feature
+
+This app can generate PDF reports from structured form data. Each template defines a JSON schema, a field-to-coordinate mapping, and a base PDF. See [docs/reports/field-mapping.md](docs/reports/field-mapping.md) for field placement and [docs/reports/adding-new-report-template.md](docs/reports/adding-new-report-template.md) to create new templates.
