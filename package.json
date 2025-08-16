@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:e2e": "vitest run \"e2e/**/*.test.{ts,js}\"",
+    "test:rn": "jest",
     "test:persistence": "node features/reports/__tests__/persistence.test.js",
     "pdf:sample": "node scripts/pdf-sample.js",
     "prepare": "husky"
@@ -43,6 +44,7 @@
     "react-native-screens": "~4.11.1",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
+    "@react-native-async-storage/async-storage": "^1.23.1",
     "react-hook-form": "^7.52.1",
     "@hookform/resolvers": "^3.9.0",
     "zod": "^3.23.8",
@@ -61,7 +63,12 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/jest-dom": "^6.5.0",
     "jsdom": "^24.0.0",
-    "fake-indexeddb": "^5.0.2"
+    "fake-indexeddb": "^5.0.2",
+    "@testing-library/react-native": "^12.5.2",
+    "@testing-library/jest-native": "^5.7.0",
+    "jest": "^29.7.0",
+    "jest-expo": "~53.0.2",
+    "react-test-renderer": "19.0.0"
   },
   "private": true,
   "lint-staged": {
@@ -71,6 +78,12 @@
     ],
     "*.{json,md}": [
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
     ]
   }
 }
